@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.weka</groupId>
+    <artifactId>gujavasc</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <LibSVM.version>1.0.10</LibSVM.version>
+        <SMOTE.version>1.0.3</SMOTE.version>
+        <bestFirstTree.version>1.0.4</bestFirstTree.version>
+        <bestrees.version>1.0.0</bestrees.version>
+        <lombok.version>1.18.10</lombok.version>
+        <thresholdSelector.version>1.0.3</thresholdSelector.version>
+        <ensembleLibrary.version>1.0.4</ensembleLibrary.version>
+        <weka-stable.version>3.8.3</weka-stable.version>
+        <jersey-common.version>2.29.1</jersey-common.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <java.version>1.8</java.version>
+        <commons-lang3.version>3.9</commons-lang3.version>
+        <javacv.version>1.5.2</javacv.version>
+        <openblas-platform.version>0.3.7-1.5.2</openblas-platform.version>
+        <junit.version>4.12</junit.version>
+    </properties>
+
+
+    <dependencies>
+
+        <!-- Libs OpenCV (JavaCV) -->
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>javacv-platform</artifactId>
+            <version>${javacv.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>javacpp</artifactId>
+            <version>${javacv.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>javacv</artifactId>
+            <version>${javacv.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>openblas-platform</artifactId>
+            <version>${openblas-platform.version}</version>
+        </dependency>
+
+        <!-- Libs Weka -->
+        <dependency>
+            <groupId>nz.ac.waikato.cms.weka</groupId>
+            <artifactId>weka-stable</artifactId>
+            <version>${weka-stable.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>nz.ac.waikato.cms.weka</groupId>
+            <artifactId>LibSVM</artifactId>
+            <version>${LibSVM.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>weka-dev</artifactId>
+                    <groupId>nz.ac.waikato.cms.weka</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>nz.ac.waikato.cms.weka</groupId>
+            <artifactId>thresholdSelector</artifactId>
+            <version>${thresholdSelector.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>nz.ac.waikato.cms.weka</groupId>
+            <artifactId>bestFirstTree</artifactId>
+            <version>${bestFirstTree.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>nz.ac.waikato.cms.weka</groupId>
+            <artifactId>ensembleLibrary</artifactId>
+            <version>${ensembleLibrary.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>nz.ac.waikato.cms.weka</groupId>
+            <artifactId>bestrees</artifactId>
+            <version>${bestrees.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>nz.ac.waikato.cms.weka</groupId>
+            <artifactId>SMOTE</artifactId>
+            <version>${SMOTE.version}</version>
+        </dependency>
+
+        <!-- Libs Auxiliares-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-common</artifactId>
+            <version>${jersey-common.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+
+        <plugins>
+
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+
+</project>
